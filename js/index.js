@@ -49,8 +49,33 @@ document.getElementById("start_button").addEventListener('click', function(){
     game_state = "ready"; 
 });
 
-let birdPosY = 200;
-let birdSpeedY = 0;
+document.getElementById("ok_button").addEventListener('click', function(){
+    // 隐藏首页场景
+    document.getElementById("scene_over").style.display = 'none';
+    // 显示游戏场景
+    document.getElementById("scene_ready").style.display = 'flex';
+    
+    // 创建小鸟元素
+    bird = document.createElement('div');
+    bird.id = 'bird';
+    document.getElementById('scene').appendChild(bird);
+
+    // 游戏状态进入ready
+    game_state = "ready"; 
+});
+
+document.getElementById("menu_button").addEventListener('click', function(){
+    // 隐藏首页场景
+    document.getElementById("scene_over").style.display = 'none';
+    // 显示游戏场景
+    document.getElementById("scene_home").style.display = 'flex';
+    
+    // 游戏状态进入home
+    game_state = "home"; 
+});
+
+let birdPosY;
+let birdSpeedY;
 
 window.addEventListener('keydown', (event) => {
     if (event.code === 'Space' || event.key === ' ') {
@@ -61,6 +86,7 @@ window.addEventListener('keydown', (event) => {
             console.log("game running!");
             // 隐藏ready界面，显示游戏小鸟
             document.getElementById("scene_ready").style.display = 'none';
+            BirdInit();
             bird.style.display = 'block';
             
             // 开始游戏循环
@@ -86,8 +112,16 @@ const birdFrames = [
     '-179px -593px'  // 帧3：请修改为第三张图的坐标
 ];
 
-let birdFrameIndex = 0;
-let birdFrameTimer = 0;
+let birdFrameIndex;
+let birdFrameTimer;
+const birdWingRate = 10;
+
+function BirdInit() {
+    birdPosY = 200;
+    birdSpeedY = 0;
+    birdFrameTimer = 0;
+    birdFrameIndex = 0;
+}
 
 function GameLoop() {
     backgroundX += scrollSpeed;
@@ -100,9 +134,12 @@ function GameLoop() {
 
     // 小鸟扇翅膀动画
     birdFrameTimer++;
-    if (birdFrameTimer % 10 === 0) { // 每10帧切换一次图片，数字越小越快
+    if (birdFrameTimer % birdWingRate === 0) { // 每10帧切换一次图片，数字越小越快
         birdFrameIndex = (birdFrameIndex + 1) % birdFrames.length;
         bird.style.backgroundPosition = birdFrames[birdFrameIndex];
+        if (birdFrameTimer === birdWingRate) {
+            birdFrameTimer = 0;
+        }
     }
     
     // 重力加速度下降
@@ -113,7 +150,8 @@ function GameLoop() {
     if (birdPosY < 0 || birdPosY + 22 > 400) {
         console.log("Game Over");
         game_state = "ended";
-        bird.style.display = "none";
+        bird.style.display = "none"; // 游戏结束时通常保留小鸟尸体，或者看需求
+        document.getElementById("scene_over").style.display = 'flex'; 
         return; // 停止游戏循环
     }
 
