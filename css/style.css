@@ -1,0 +1,73 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    background-color: black; /* 超出部分显示黑色 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    overflow: hidden; /* 隐藏滚动条 */
+    box-sizing: border-box;
+}
+
+#home {
+    position: relative; /* 改为相对定位，由 flex 控制居中 */
+    border: 5px solid red;
+    box-sizing: border-box; /* 让 border 包含在宽高内 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../images/flappy-bird-sprite.png') no-repeat 0 0;
+    image-rendering: pixelated;
+    width: 225px; /* 原始宽度 */
+    height: 400px; /* 原始高度 */
+    overflow: hidden; /* 确保内容不溢出游戏画面 */
+}
+
+#scene_home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#scene_game {
+    width: 100%;
+    height: 100%;
+    /* 暂时简单居中显示文字 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home_logo {
+	background: url('../images/flappy-bird-sprite.png') no-repeat -548px -143px;
+	width: 136px;
+	height: 33px;
+    margin: 50px;
+}
+
+#home_buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    border: 5px solid blue;
+}
+
+#start_button {
+	background: url('../images/flappy-bird-sprite.png') no-repeat -564px -198px;
+	width: 64px;
+	height: 24px;
+}
+
+#score_button {
+	background: url('../images/flappy-bird-sprite.png') no-repeat  -658px -199px;
+	width: 64px;
+	height: 24px;
+}
+
+
