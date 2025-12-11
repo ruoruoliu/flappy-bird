@@ -8,13 +8,10 @@ body {
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     overflow: hidden; /* 隐藏滚动条 */
-    box-sizing: border-box;
 }
 
 #scene {
     position: relative; /* 改为相对定位，由 flex 控制居中 */
-    border: 5px solid red;
-    box-sizing: border-box; /* 让 border 包含在宽高内 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +43,6 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    border: 5px solid blue;
 }
 
 #start_button {
@@ -103,7 +99,6 @@ body {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    /* border: 5px solid blue; */
 }
 
 #menu_button {

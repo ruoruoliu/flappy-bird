@@ -164,7 +164,7 @@ function GameInit() {
     });
 
     // 初始化游戏分数
-    gameData.score = 9;
+    gameData.score = 0;
     document.getElementById("score").style.display = 'flex';
     document.getElementById("medal").style.backgroundPosition = '-188px -402px'; 
 }
