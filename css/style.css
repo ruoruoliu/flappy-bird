@@ -25,7 +25,7 @@ body {
     height: 400px; /* 原始高度 */
     overflow: hidden; /* 确保内容不溢出游戏画面 */
 }
-
+/* home 场景 */
 #scene_home {
     width: 100%;
     height: 100%;
@@ -49,6 +49,56 @@ body {
     border: 5px solid blue;
 }
 
+#start_button {
+	background: url('../images/flappy-bird-sprite.png') no-repeat -564px -198px;
+	width: 64px;
+	height: 24px;
+}
+
+#score_button {
+	background: url('../images/flappy-bird-sprite.png') no-repeat  -658px -199px;
+	width: 64px;
+	height: 24px;
+}
+/* ready 场景 */
+#scene_ready {
+    width: 100%;
+    height: 100%;
+    /* 暂时简单居中显示文字 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ready_logo {
+    background: url('../images/flappy-bird-sprite.png') no-repeat -460px -92px;
+    width: 137px;
+    height: 35px;
+    margin: 30px;
+}
+
+#tap_hint {
+    background: url('../images/flappy-bird-sprite.png') no-repeat -456px -140px;
+    width: 91px;
+    height: 80px;
+}
+
+/* over 场景 */
+#scene_over {
+    width: 100%;
+    height: 100%;
+    /* 暂时简单居中显示文字 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
 #over_buttons {
     display: flex;
     width: 100%;
@@ -68,51 +118,6 @@ body {
 	height: 24px;
 }
 
-#start_button {
-	background: url('../images/flappy-bird-sprite.png') no-repeat -564px -198px;
-	width: 64px;
-	height: 24px;
-}
-
-#score_button {
-	background: url('../images/flappy-bird-sprite.png') no-repeat  -658px -199px;
-	width: 64px;
-	height: 24px;
-}
-
-
-#scene_ready {
-    width: 100%;
-    height: 100%;
-    /* 暂时简单居中显示文字 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#scene_over {
-    width: 100%;
-    height: 100%;
-    /* 暂时简单居中显示文字 */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-#ready_logo {
-    background: url('../images/flappy-bird-sprite.png') no-repeat -460px -92px;
-    width: 137px;
-    height: 35px;
-    margin: 30px;
-}
-
-#tap_hint {
-    background: url('../images/flappy-bird-sprite.png') no-repeat -456px -140px;
-    width: 91px;
-    height: 80px;
-}
 
 #game_over_logo {
     background: url('../images/flappy-bird-sprite.png') no-repeat -615px -92px;
@@ -126,14 +131,83 @@ body {
     width: 178px;
     height: 92px;
     margin: 20px;
+    position: relative;
 }
+
+#medal {
+    background: url('../images/flappy-bird-sprite.png') no-repeat -188px -402px;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}
+
+#over_score {
+    position: absolute;
+    top: 26px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+#best_score {
+    position: absolute;
+    top: 66px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.small_digit {
+    background: url('../images/flappy-bird-sprite.png') no-repeat -215px -504px;
+    width: 11px;
+    height: 12px;
+    position: relative;
+}
+
+/* play 场景 */
 #bird {
     position: absolute;
     background: url('../images/flappy-bird-sprite.png') no-repeat -179px -513px;
     width: 28px;
     height: 22px;
     top: 200px;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+#score {
+    position: absolute;
+    top: 100px;
     left: 50%;
     transform: translateX(-50%);
-    display: none;
+    z-index: 888;
+    display: flex;
+    flex-direction: row;
+}
+
+.digit {
+    background: url('../images/flappy-bird-sprite.png') no-repeat -774px -93px;
+    width: 22px;
+    height: 31px;
+    position: relative;
+}
+
+.pipe_bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/flappy-bird-sprite.png') no-repeat 0 -504px;
+    width: 42px;
+    height: 251px;
+}
+
+.pipe_top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../images/flappy-bird-sprite.png') no-repeat -86px -504px;
+    width: 42px;
+    height: 251px;
 }

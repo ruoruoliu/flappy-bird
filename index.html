@@ -17,15 +17,44 @@
                 </div>
             </div>
 
-            <!-- 游戏场景 (默认隐藏) -->
+            <!-- 游戏准备场景 (默认隐藏) -->
             <div id="scene_ready" style="display: none;">
                 <div id="ready_logo"></div>
                 <div id="tap_hint"></div>
             </div>
+            
+            <!-- 游戏场景 (默认隐藏) -->
+            <div id="scene_play" style="display: none;">
+                <div id="bird"></div>
+                <div id="score">
+                    <div id="hundreds_digit" class="digit"></div>
+                    <div id="tens_digit" class="digit"></div>
+                    <div id="ones_digit" class="digit"></div>
+                </div>
+                <div class="pipe_top" id="pipe1t"></div>
+                <div class="pipe_top" id="pipe2t"></div>
+                <div class="pipe_top" id="pipe3t"></div>
+                <div class="pipe_bottom" id="pipe1b"></div>
+                <div class="pipe_bottom" id="pipe2b"></div>
+                <div class="pipe_bottom" id="pipe3b"></div>
+            </div>
 
+            <!-- 游戏结束场景（默认隐藏）-->
             <div id="scene_over" style="display: none;">
                 <div id="game_over_logo"></div>
-                <div id="medal_board"></div>
+                <div id="medal_board">
+                    <div id="medal"></div>
+                    <div id="over_score">
+                        <div id="over_score_hundreds_digit" class="small_digit"></div>
+                        <div id="over_score_tens_digit" class="small_digit"></div>
+                        <div id="over_score_ones_digit" class="small_digit"></div>
+                    </div>
+                    <div id="best_score">
+                        <div id="best_score_hundreds_digit" class="small_digit"></div>
+                        <div id="best_score_tens_digit" class="small_digit"></div>
+                        <div id="best_score_ones_digit" class="small_digit"></div>
+                    </div>
+                </div>
                 <div id="over_buttons">
                     <button id="ok_button"></button> 
                     <button id="menu_button"></button> 
